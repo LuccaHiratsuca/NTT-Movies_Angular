@@ -1,0 +1,14 @@
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand nttflix-brand" href="#">NTTFLIX</a>
+      <ul class="navbar-nav">
+      </ul>
+      <form class="d-flex search-form" [class.expanded]="showSearch">
+        <input class="form-control search-input" type="text" placeholder="Search" [(ngModel)]="searchText">
+        <button class="btn search-btn" type="button" (click)="toggleSearch()">
+          <span class="bi bi-search"></span>
+        </button>
+      </form>
+    </div>
+  </nav>
+  
