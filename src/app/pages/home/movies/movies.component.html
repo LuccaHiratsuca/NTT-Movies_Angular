@@ -1,0 +1,22 @@
+<div *ngIf="movies$ | async as movies" class="container mt-4">
+  <div class="title-container">
+    <h2>Os mais vistos</h2>
+    <a href="/caminho/para/mais-vistos" class="view-all-button">Ver tudo &gt;</a>
+  </div>    
+  <div class="navigation prev" *ngIf="canScrollLeft" (click)="scrollLeft()">‹</div>
+  <div class="row flex-nowrap overflow-auto py-3" #scrollContainer>
+    <div class="col" *ngFor="let movie of movies">
+      <div class="card" (click)="selectMovie(movie.imdbID)">
+        <img [src]="movie.Poster" class="card-img-top" [alt]="movie.Title">
+        <div class="card-body">
+          <h5 class="card-title">{{ movie.Title }}</h5>
+          <p class="card-text">{{ movie.Year }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="navigation next" *ngIf="canScrollRight" (click)="scrollRight()">›</div>
+</div>
+<ng-template #loading>
+  <p>Carregando filmes...</p>
+</ng-template>
