@@ -4,20 +4,31 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
-import { HomeComponent } from './pages/home/home.component';
 import { WatchListComponent } from './pages/watch-list/watch-list.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HomeModule } from './pages/home/home.module';
+import { StoreModule } from '@ngrx/store';
+import { moviesReducer } from './shared/store/Reducers/movies.reducers';
+import { EffectsModule } from '@ngrx/effects';
+import { MovieEffects } from './shared/store/Effects/movies.effects';
+import { MovieDetailComponent } from './pages/movies-detail/movies-detail.component';
+import { MovieDetailModule } from './pages/movies-detail/movies-detail.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     WatchListComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    CoreModule
+    CoreModule,
+    HttpClientModule,
+    HomeModule,
+    StoreModule.forRoot({ movies: moviesReducer}),
+    EffectsModule.forRoot([MovieEffects]),
+    MovieDetailModule
   ],
   providers: [],
   bootstrap: [AppComponent]

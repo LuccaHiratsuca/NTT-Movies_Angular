@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -12,7 +14,10 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    RouterLink,
+    RouterModule
+    
   ],
   exports: [
     HeaderComponent,
