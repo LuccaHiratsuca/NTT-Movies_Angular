@@ -1,4 +1,4 @@
-import { Movie } from './../../models/movies.model';
+import { Movie } from '../../models/movies.model';
 import { createAction, props } from '@ngrx/store';
 
 export const addToWatchlist = createAction(

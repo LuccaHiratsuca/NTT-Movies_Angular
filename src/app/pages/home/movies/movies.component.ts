@@ -4,11 +4,11 @@ import { Store, select } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Movie } from 'src/app/shared/models/movies.model';
-import { selectMovies } from 'src/app/shared/store/Selectors/movies.selectors';
+import { selectMovies } from 'src/app/shared/store/selectors/movies.selectors';
 import * as MovieActions from 'src/app/shared/store/actions/movies.actions';
 import { Router } from '@angular/router';
 import * as WatchlistActions from 'src/app/shared/store/actions/watchlist.actions';
-import { selectWatchlist } from 'src/app/shared/store/Selectors/watchlist.selector';
+import { selectWatchlist } from 'src/app/shared/store/selectors/watchlist.selector';
 
 @Component({
   selector: 'app-movies',

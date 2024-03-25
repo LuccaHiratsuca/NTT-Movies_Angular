@@ -7,13 +7,13 @@ import { CoreModule } from './core/core.module';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeModule } from './pages/home/home.module';
 import { StoreModule } from '@ngrx/store';
-import { moviesReducer } from './shared/store/Reducers/movies.reducers';
+import { moviesReducer } from './shared/store/reducers/movies.reducers';
 import { EffectsModule } from '@ngrx/effects';
-import { MovieEffects } from './shared/store/Effects/movies.effects';
+import { MovieEffects } from './shared/store/effects/movies.effects';
 import { MovieDetailModule } from './pages/movies-detail/movies-detail.module';
-import { watchlistReducer } from './shared/store/Reducers/watchlist.reducers';
+import { watchlistReducer } from './shared/store/reducers/watchlist.reducers';
 import { WatchListModule } from './pages/watch-list/watch-list.module';
-import { WatchlistEffects } from './shared/store/Effects/watchlist.effects';
+import { WatchlistEffects } from './shared/store/effects/watchlist.effects';
 
 // Import the StoreDevtoolsModule
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';

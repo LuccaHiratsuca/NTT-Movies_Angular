@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import * as WatchlistActions from './shared/store/actions/watchlist.actions';
+import * as watchListActions from './shared/store/actions/watchlist.actions';
 
 
 @Component({
@@ -13,6 +13,6 @@ export class AppComponent implements OnInit {
   constructor(private store: Store) {}
 
   ngOnInit() {
-    this.store.dispatch(WatchlistActions.loadWatchlist());
+    this.store.dispatch(watchListActions.loadWatchlist());
   }
 }

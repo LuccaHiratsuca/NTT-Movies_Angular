@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { DetailedMovie } from 'src/app/shared/models/detailed-movie.model';
-import { selectSelectedMovie } from 'src/app/shared/store/Selectors/movies.selectors';
+import { selectSelectedMovie } from 'src/app/shared/store/selectors/movies.selectors';
 import * as MovieActions from 'src/app/shared/store/actions/movies.actions';
 
 @Component({

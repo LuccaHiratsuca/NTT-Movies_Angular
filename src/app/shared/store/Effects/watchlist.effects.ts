@@ -4,7 +4,7 @@ import { withLatestFrom, map, catchError } from 'rxjs/operators';
 import * as WatchlistActions from '../actions/watchlist.actions';
 import { Store, select } from '@ngrx/store';
 import { WatchlistState } from '../../models/watchlist.model';
-import { selectWatchlist } from '../Selectors/watchlist.selector';  
+import { selectWatchlist } from '../selectors/watchlist.selector';  
 
 @Injectable()
 export class WatchlistEffects {
