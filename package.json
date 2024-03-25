@@ -4,9 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "prebuild": "node normalize-filenames.js",
+    "build": "ng build && npm run prebuild",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
+    
   },
   "private": true,
   "dependencies": {
