@@ -5,8 +5,3 @@ export interface Movie {
     Type: string;
     Poster: string;
 }
-
-
-export interface MovieId{
-    
-}

@@ -6,17 +6,17 @@
 
 .nav-link {
   color: #fff;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Stylish font family */
-  font-size: 18px; /* Slightly smaller font size for the links */
-  font-weight: 500; /* Medium weight for readability */
-  text-transform: uppercase; /* Uppercase text for a more navigational feel */
-  letter-spacing: 0.05em; /* Spacing out letters for better legibility */
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+  font-size: 18px; 
+  font-weight: 500; 
+  text-transform: uppercase; 
+  letter-spacing: 0.05em; 
   transition: color 0.5s;
-  padding: 0.5rem 1rem; /* Space around the links */
+  padding: 0.5rem 1rem; 
 }
 
 .navbar-brand {
-  color: #E50914; /* Netflix's iconic red color */
+  color: #E50914;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: bold;
   font-size: 24px;
@@ -24,7 +24,7 @@
 }
 
 .nttflix-brand {
-  color: #E50914; /* Netflix's iconic red color */
+  color: #E50914; 
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: bold;
   font-size: 24px;
@@ -37,33 +37,33 @@
 
 .search-form {
   position: relative;
-  margin-left: auto; /* Garante que o formulário de pesquisa fique à direita */
+  margin-left: auto; 
 }
 
 .search-input {
-  color: #fff; /* Muda a cor do texto para branco */
+  color: #fff; 
   width: 0;
   padding: 0;
   visibility: hidden;
   opacity: 0;
   transition: width 0.5s ease-in-out, padding 0.5s ease-in-out, visibility 0s 0.5s, opacity 0.5s ease-in-out;
   position: absolute;
-  right: 0; /* Inicia do canto direito do seu formulário de pesquisa */
-  background-color: #ffffff; /* Cor de fundo mais escura para contraste */
+  right: 0; 
+  background-color: #ffffff; 
 }
 
 .search-form.expanded .search-input {
-  width: 250px; /* Largura desejada quando expandido */
-  padding: 0.375rem 0.75rem; /* Padding padrão para inputs do Bootstrap */
+  width: 250px; 
+  padding: 0.375rem 0.75rem; 
   visibility: visible;
   opacity: 1;
   transition-delay: 0s;
 }
 
 .search-btn {
-  color: #fff; /* Muda a cor do ícone de pesquisa para branco */
+  color: #fff; 
   position: absolute;
-  right: 0; /* Garante que o botão fique fixo à direita */
+  right: 0; 
   background: none;
   border: none;
   outline: none;
@@ -71,7 +71,7 @@
 
 
 .bi-search {
-  font-size: 20px; /* Adjusted font size for visibility */
+  font-size: 20px; 
   cursor: pointer;
 }
 

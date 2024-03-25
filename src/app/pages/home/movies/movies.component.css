@@ -47,7 +47,6 @@ h2.text-light {
 .card-title,
 .card-text {
     color: #ffffff; 
-    /* take the hiperlink */
     text-decoration: none;
 }
 
