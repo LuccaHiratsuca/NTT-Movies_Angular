@@ -1,0 +1,17 @@
+  
+.badge {
+opacity: 0.9; /* Slightly transparent badges for a subtle look */
+}
+
+.btn-outline-light {
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Light border for the button */
+}
+
+.btn-outline-light:hover {
+background-color: rgba(255, 255, 255, 0.1); /* Slight highlight on hover */
+}
+
+.text-muted{
+    color: #ffffff !important;
+}
+

@@ -1,0 +1,67 @@
+<app-header></app-header>
+
+<!-- Movie Detail Section -->
+<div *ngIf="movie$ | async as movie" class="container py-5 movie-detail text-light rounded">
+    <div class="row g-4">
+      <!-- Movie Poster -->
+      <div class="col-lg-4">
+        <img [src]="movie.Poster" class="img-fluid rounded" alt="{{ movie.Title }}">
+      </div>
+  
+      <!-- Movie Details -->
+      <div class="col-lg-8">
+        <h1 class="mb-3">{{ movie.Title }} <span class="text-muted">({{ movie.Year }})</span></h1>
+        <p class="lead">{{ movie.Plot }}</p>
+        <div class="mb-4">
+          <span class="badge bg-secondary me-2">{{ movie.Rated }}</span>
+          <span class="badge bg-success me-2">{{ movie.Runtime }}</span>
+          <span class="badge bg-info text-dark me-2">{{ movie.Genre }}</span>
+        </div>
+  
+        <!-- Key Details -->
+        <dl class="row">
+          <dt class="col-sm-4">Director</dt>
+          <dd class="col-sm-8">{{ movie.Director }}</dd>
+  
+          <dt class="col-sm-4">Writers</dt>
+          <dd class="col-sm-8">{{ movie.Writer }}</dd>
+  
+          <dt class="col-sm-4">Stars</dt>
+          <dd class="col-sm-8">{{ movie.Actors }}</dd>
+  
+          <dt class="col-sm-4">Awards</dt>
+          <dd class="col-sm-8">{{ movie.Awards }}</dd>
+  
+          <dt class="col-sm-4">Box Office</dt>
+          <dd class="col-sm-8">{{ movie.BoxOffice }}</dd>
+  
+          <dt class="col-sm-4">Production</dt>
+          <dd class="col-sm-8">{{ movie.Production }}</dd>
+        </dl>
+  
+        <!-- Ratings -->
+        <div class="ratings mt-4">
+          <h5>Ratings:</h5>
+          <ul class="list-inline">
+            <li class="list-inline-item" *ngFor="let rating of movie.Ratings">
+              <span class="badge bg-warning text-dark me-2">{{ rating.Source }}: {{ rating.Value }}</span>
+            </li>
+          </ul>
+        </div>
+  
+        <!-- Links and Buttons -->
+        <div class="mt-4">
+          <button *ngIf="movie.Website !== 'N/A'" type="button" class="btn btn-outline-light me-2" (click)="goToWebsite(movie.Website)">
+            Visit Official Website
+          </button>
+          <button *ngIf="movie.imdbID" type="button" class="btn btn-outline-light" (click)="goToIMDB(movie.imdbID)">
+            View on IMDb
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<app-footer></app-footer>
+```
