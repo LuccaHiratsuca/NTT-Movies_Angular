@@ -9,7 +9,7 @@ import { DetailedMovie } from 'src/app/shared/models/detailed-movie.model';
   providedIn: 'root',
 })
 export class MovieService {
-  private apiUrl = 'http://www.omdbapi.com/';
+  private apiUrl = 'https://www.omdbapi.com/';
   private defaultPoster = 'https://via.placeholder.com/300x450';
 
   constructor(private http: HttpClient) {}
