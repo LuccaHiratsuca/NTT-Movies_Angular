@@ -1,9 +1,14 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { WatchlistState } from '../../models/watchlist.model';
 
-export const selectWatchlistFeature = createFeatureSelector<WatchlistState>('watchlistFeature');
+export const selectMoviesState = createFeatureSelector<WatchlistState>('watchlist');
 
 export const selectWatchlist = createSelector(
-  selectWatchlistFeature,
-  (state: WatchlistState) => state.ids
+  selectMoviesState,
+  (state: WatchlistState) => state.watchlist
+);
+
+export const selectWatchlistIds = createSelector(
+  selectWatchlist,
+  (watchlist) => watchlist.map(movie => movie.imdbID)
 );

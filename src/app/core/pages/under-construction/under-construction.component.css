@@ -1,0 +1,14 @@
+body {
+    background-color: #141414;
+    color: #fff;
+  }
+  
+.btn-danger {
+    background-color: #E50914;
+    border-color: #E50914;
+}
+
+.mb-3, .mb-4 {
+    color: #fff;
+}
+

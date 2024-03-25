@@ -5,12 +5,16 @@ import { FooterComponent } from './components/footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { RouterModule } from '@angular/router';
+import { UnderConstructionComponent } from './pages/under-construction/under-construction.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    UnderConstructionComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     CommonModule,

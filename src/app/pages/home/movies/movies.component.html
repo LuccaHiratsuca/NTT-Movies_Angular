@@ -1,8 +1,8 @@
-<div *ngIf="movies$ | async as movies" class="container mt-4">
+<div *ngIf="movies$ | async as movies; else loading" class="container mt-4">
   <div class="title-container">
-    <h2>Os mais vistos</h2>
-    <a href="/caminho/para/mais-vistos" class="view-all-button">Ver tudo &gt;</a>
-  </div>    
+    <h2>{{ title }}</h2>
+    <a href="/all" class="view-all-button">Ver tudo &gt;</a>
+  </div>
   <div class="navigation prev" *ngIf="canScrollLeft" (click)="scrollLeft()">‹</div>
   <div class="row flex-nowrap overflow-auto py-3" #scrollContainer>
     <div class="col" *ngFor="let movie of movies">
@@ -11,16 +11,18 @@
         <div class="card-body position-relative">
           <h5 class="card-title">{{ movie.Title }}</h5>
           <p class="card-text">{{ movie.Year }}</p>
-          <!-- Positioned Add to watchlist button -->
-          <button type="button" class="btn position-absolute top-0 end-0 m-2 p-0" (click)="addToWatchlist(movie.imdbID); $event.stopPropagation();" aria-label="Add to Watchlist">
-            <i class="bi" [class]="isInWatchlist(movie.imdbID) ? 'bi-heart-fill' : 'bi-heart'" style="color: red;"></i>
-          </button>
+          <button type="button" class="btn position-absolute top-0 end-0 m-2 p-0" 
+          (click)="toggleWatchlist(movie, $event);" aria-label="Add to Watchlist">
+          <i class="bi" [class.bi-heart-fill]="isInWatchlist(movie.imdbID)" [class.bi-heart]="!isInWatchlist(movie.imdbID)" style="color: red;"></i>
+        </button>
         </div>
       </div>
     </div>
   </div>
   <div class="navigation next" *ngIf="canScrollRight" (click)="scrollRight()">›</div>
 </div>
+
+
 <ng-template #loading>
   <p>Carregando filmes...</p>
 </ng-template>

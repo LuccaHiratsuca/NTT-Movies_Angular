@@ -4,21 +4,25 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
-import { WatchListComponent } from './pages/watch-list/watch-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeModule } from './pages/home/home.module';
 import { StoreModule } from '@ngrx/store';
 import { moviesReducer } from './shared/store/Reducers/movies.reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { MovieEffects } from './shared/store/Effects/movies.effects';
-import { MovieDetailComponent } from './pages/movies-detail/movies-detail.component';
 import { MovieDetailModule } from './pages/movies-detail/movies-detail.module';
 import { watchlistReducer } from './shared/store/Reducers/watchlist.reducers';
+import { WatchListModule } from './pages/watch-list/watch-list.module';
+import { WatchlistEffects } from './shared/store/Effects/watchlist.effects';
+
+// Import the StoreDevtoolsModule
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment'; // Import environment to use it for configuration
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    WatchListComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,12 +31,25 @@ import { watchlistReducer } from './shared/store/Reducers/watchlist.reducers';
     CoreModule,
     HttpClientModule,
     HomeModule,
-    StoreModule.forRoot({ movies: moviesReducer}),
+    StoreModule.forRoot({ 
+      movies: moviesReducer,
+      watchlist: watchlistReducer
+    
+    }),
     StoreModule.forFeature('watchlistFeature', {
       watchlist: watchlistReducer
     }),
-    EffectsModule.forRoot([MovieEffects]),
-    MovieDetailModule
+    EffectsModule.forRoot([
+      MovieEffects,
+      WatchlistEffects
+    ]),
+    MovieDetailModule,
+    WatchListModule,
+    // Register the StoreDevtoolsModule
+    StoreDevtoolsModule.instrument({
+      maxAge: 25, // Retains last 25 states
+      logOnly: environment.production, // Restrict extension to log-only mode
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

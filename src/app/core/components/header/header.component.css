@@ -41,7 +41,7 @@
 }
 
 .search-input {
-  color: #fff; 
+  color: #000000; 
   width: 0;
   padding: 0;
   visibility: hidden;
@@ -50,6 +50,7 @@
   position: absolute;
   right: 0; 
   background-color: #ffffff; 
+  border-color: #E50914;
 }
 
 .search-form.expanded .search-input {

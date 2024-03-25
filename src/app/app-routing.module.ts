@@ -3,6 +3,8 @@ import { RouterModule, Routes, PreloadAllModules} from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { WatchListComponent } from './pages/watch-list/watch-list.component';
 import { MovieDetailComponent } from './pages/movies-detail/movies-detail.component';
+import { UnderConstructionComponent } from './core/pages/under-construction/under-construction.component';
+import { PageNotFoundComponent } from './core/pages/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {
@@ -12,17 +14,23 @@ const routes: Routes = [
   {
     path: 'watch-list',
     component: WatchListComponent
-  
   },
   {
     path: 'movie-detailed/:id',
     component: MovieDetailComponent
   },
+  {
+    path: 'all',
+    component: UnderConstructionComponent
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })],
   exports: [RouterModule]
 })
-
 export class AppRoutingModule { }

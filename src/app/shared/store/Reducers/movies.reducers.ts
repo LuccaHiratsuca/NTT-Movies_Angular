@@ -15,6 +15,7 @@ export const initialState: MoviesState = {
   selectedMovie: null
 };
 
+
 export const moviesReducer = createReducer(
   initialState,
   on(MovieActions.searchMoviesSuccess, (state, { movies }) => ({

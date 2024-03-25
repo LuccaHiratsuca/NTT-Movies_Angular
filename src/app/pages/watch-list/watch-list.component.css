@@ -1,0 +1,134 @@
+h2{
+    color: #ffffff;
+    margin-right: 1rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+p{
+    color: #ffffff;
+    font-size: 1rem;
+    margin-right: 1rem;
+}
+
+.mt-3{
+    color: #ffffff;
+    margin-top: 1rem;
+}
+
+.btn{
+    background-color:#E50914;
+    color: #ffffff;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin-right: 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.5s;
+    align-self: center;
+}
+
+.watchlist-slider .carousel-container {
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  
+  .movie-card {
+    display: inline-block;
+    position: relative;
+    width: 200px;
+    cursor: pointer;
+  }
+  
+  .movie-image {
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease;
+  }
+  
+  .movie-info {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    text-align: center;
+    color: white;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+  .movie-card:hover .movie-info {
+    opacity: 1;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+  }
+  
+  .movie-card:hover .overlay {
+    opacity: 1;
+  }
+  
+  .movies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  
+  .movie-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .movie-image {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+  }
+  
+  .movie-info {
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5); /* Black see-through */
+    color: #f1f1f1;
+    width: 100%;
+    transition: .5s ease;
+    opacity:0;
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .movie-card:hover .overlay {
+    opacity: 1;
+  }
+  

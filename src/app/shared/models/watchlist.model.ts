@@ -1,3 +1,6 @@
+import { Movie } from "./movies.model";
+
+
 export interface WatchlistState {
-    ids: string[];
-  }
+  watchlist: Movie[]; 
+}
