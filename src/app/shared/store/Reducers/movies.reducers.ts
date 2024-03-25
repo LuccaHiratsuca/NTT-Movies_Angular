@@ -1,7 +1,7 @@
 import { createReducer, on } from '@ngrx/store';
 import { Movie } from '../../models/movies.model';
-import * as MovieActions from '../actions/movies.actions';
 import { DetailedMovie } from '../../models/detailed-movie.model';
+import * as MovieActions from '../actions/movies.actions';
 
 export interface MoviesState {
   movies: Movie[];

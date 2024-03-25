@@ -13,6 +13,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { MovieEffects } from './shared/store/Effects/movies.effects';
 import { MovieDetailComponent } from './pages/movies-detail/movies-detail.component';
 import { MovieDetailModule } from './pages/movies-detail/movies-detail.module';
+import { watchlistReducer } from './shared/store/Reducers/watchlist.reducers';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,9 @@ import { MovieDetailModule } from './pages/movies-detail/movies-detail.module';
     HttpClientModule,
     HomeModule,
     StoreModule.forRoot({ movies: moviesReducer}),
+    StoreModule.forFeature('watchlistFeature', {
+      watchlist: watchlistReducer
+    }),
     EffectsModule.forRoot([MovieEffects]),
     MovieDetailModule
   ],

@@ -5,6 +5,8 @@ import { Movie } from 'src/app/shared/models/movies.model';
 import { selectMovies } from 'src/app/shared/store/Selectors/movies.selectors';
 import * as MovieActions from 'src/app/shared/store/actions/movies.actions';
 import { Router } from '@angular/router';
+import * as WatchlistActions from 'src/app/shared/store/actions/watchlist.actions';
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-movies',
@@ -15,10 +17,11 @@ export class MoviesComponent implements OnInit, AfterViewInit {
   movies$: Observable<Movie[]>;
   canScrollLeft: boolean = false;
   canScrollRight: boolean = true;
+  watchlist: string[] = []; 
 
   @ViewChild('scrollContainer') scrollContainer!: ElementRef;
 
-  constructor(private store: Store, private router: Router) {
+  constructor(private store: Store, private router: Router, private cdr: ChangeDetectorRef) {
     this.movies$ = this.store.pipe(select(selectMovies));
   }
 
@@ -52,4 +55,20 @@ export class MoviesComponent implements OnInit, AfterViewInit {
     element.scrollBy({ left:700, behavior: 'smooth' });
     setTimeout(() => this.updateArrowVisibility(), 200);
   }
-}
+
+  addToWatchlist(movieId: string): void {
+    if (this.isInWatchlist(movieId)) {
+      this.watchlist = this.watchlist.filter(id => id !== movieId);
+    } else {
+      this.watchlist = [...this.watchlist, movieId];
+    }
+    this.store.dispatch(WatchlistActions.addToWatchlist({ movieId }));
+  
+    this.cdr.detectChanges();
+  }
+
+  isInWatchlist(movieId: string): boolean {
+    return this.watchlist.includes(movieId);
+  }
+  }
+ 

@@ -8,9 +8,13 @@
     <div class="col" *ngFor="let movie of movies">
       <div class="card" (click)="selectMovie(movie.imdbID)">
         <img [src]="movie.Poster" class="card-img-top" [alt]="movie.Title">
-        <div class="card-body">
+        <div class="card-body position-relative">
           <h5 class="card-title">{{ movie.Title }}</h5>
           <p class="card-text">{{ movie.Year }}</p>
+          <!-- Positioned Add to watchlist button -->
+          <button type="button" class="btn position-absolute top-0 end-0 m-2 p-0" (click)="addToWatchlist(movie.imdbID); $event.stopPropagation();" aria-label="Add to Watchlist">
+            <i class="bi" [class]="isInWatchlist(movie.imdbID) ? 'bi-heart-fill' : 'bi-heart'" style="color: red;"></i>
+          </button>
         </div>
       </div>
     </div>
