@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { of } from 'rxjs';
 import { catchError, map, mergeMap } from 'rxjs/operators';
-import { MovieService } from '../../services/Movies/movies.service';
+import { MovieService } from '../../services/movies/movies.service';
 import * as MoviesActions from '../actions/movies.actions';
 import { Movie } from '../../models/movies.model';
 import { DetailedMovie } from '../../models/detailed-movie.model';

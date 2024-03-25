@@ -1,4 +1,4 @@
-import { MovieService } from './../../../shared/services/Movies/movies.service';
+import { MovieService } from '../../../shared/services/movies/movies.service';
 import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, OnDestroy, Input } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
