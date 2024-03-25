@@ -1,0 +1,22 @@
+<app-header></app-header>
+
+<div *ngIf="movies.length; else noMoviesTemplate" class="container-fluid movie-showcase">
+  <div class="row">
+    <div class="col-md-3" *ngFor="let movie of movies">
+      <div class="card movie-card">
+        <img [src]="movie.Poster" class="card-img-top" alt="{{ movie.Title }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ movie.Title }}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #noMoviesTemplate>
+  <div class="container no-movies">
+    <p>No movies found.</p>
+  </div>
+</ng-template>
+
+<app-footer></app-footer>

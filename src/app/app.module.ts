@@ -14,10 +14,11 @@ import { MovieDetailModule } from './pages/movies-detail/movies-detail.module';
 import { watchlistReducer } from './shared/store/reducers/watchlist.reducers';
 import { WatchListModule } from './pages/watch-list/watch-list.module';
 import { WatchlistEffects } from './shared/store/effects/watchlist.effects';
+import { MoviesListModule } from './pages/movies-list/movies-list.module';
 
 // Import the StoreDevtoolsModule
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { environment } from '../environments/environment'; // Import environment to use it for configuration
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -31,6 +32,11 @@ import { environment } from '../environments/environment'; // Import environment
     CoreModule,
     HttpClientModule,
     HomeModule,
+    MoviesListModule,
+    MovieDetailModule,
+    WatchListModule,
+
+
     StoreModule.forRoot({ 
       movies: moviesReducer,
       watchlist: watchlistReducer
@@ -43,8 +49,6 @@ import { environment } from '../environments/environment'; // Import environment
       MovieEffects,
       WatchlistEffects
     ]),
-    MovieDetailModule,
-    WatchListModule,
     // Register the StoreDevtoolsModule
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states

@@ -1,31 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, NavigationStart } from '@angular/router';
-
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
 })
-
 export class HeaderComponent {
   searchText: string = ''; 
-  showSearch: boolean = false;
 
-  constructor(private router: Router) {
-  }
+  constructor(private router: Router) {}
 
-  toggleSearch(): void {
-    this.showSearch = !this.showSearch;
-  }
-
-  ngOnInit(): void {
-    this.router.events.subscribe(event => {
-      if (event instanceof NavigationStart) {
-        console.log('Navigation started to:', event.url);
-      }
-    });
-  }
-
-    
+  searchMovies(): void {
+    this.router.navigate(['/movielist'], { queryParams: { title: this.searchText } });
+  }  
 }

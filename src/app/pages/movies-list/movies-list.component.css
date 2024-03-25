@@ -1,0 +1,47 @@
+.movie-showcase {
+    padding: 20px 0;
+    background-color: #141414;
+    color: white;
+  }
+  
+  .movie-card {
+    margin: 15px 0;
+    background-color: #181818;
+    border: none;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .movie-card:hover {
+    transform: scale(1.05);
+    z-index: 10;
+  }
+  
+  .card-img-top {
+    height: 350px;
+    object-fit: cover;
+  }
+  
+  .card-title {
+    color: #e50914;
+    text-align: center;
+  }
+  
+  .no-movies {
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .container, .container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  @media (min-width: 992px) {
+    .container, .container-fluid {
+      max-width: 960px;
+    }
+  }
+  
